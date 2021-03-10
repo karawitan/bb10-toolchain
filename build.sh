@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 # PERSONALIZATON :
 
@@ -51,11 +51,11 @@ cd BB10_tools
 #tar -xvf binutils-2.35.tar.xz
 #mv binutils-2.35 bb10-binutils
 
-git clone --single-branch --branch 700_release --depth 1 https://github.com/extrowerk/bb10-binutils.git
-git clone --single-branch --branch 700_release --depth 1 https://github.com/extrowerk/bb10-gcc.git
-git clone --single-branch --branch 700_release --depth 1 https://github.com/extrowerk/bb10-libmpc.git bb10-gcc/mpc
-git clone --single-branch --branch 700_release --depth 1 https://github.com/extrowerk/bb10-libgmp.git bb10-gcc/gmp
-git clone --single-branch --branch 700_release --depth 1 https://github.com/extrowerk/bb10-libmpfr.git bb10-gcc/mpfr
+[ -d bb10-binutils ] || git clone --single-branch --branch 700_release --depth 1 https://github.com/extrowerk/bb10-binutils.git
+[ -d bb10-gcc ] || git clone --single-branch --branch 700_release --depth 1 https://github.com/extrowerk/bb10-gcc.git
+[ -d bb10-gcc/mpc ] || git clone --single-branch --branch 700_release --depth 1 https://github.com/extrowerk/bb10-libmpc.git bb10-gcc/mpc
+[ -d bb10-gcc/gmp ] || git clone --single-branch --branch 700_release --depth 1 https://github.com/extrowerk/bb10-libgmp.git bb10-gcc/gmp
+[ -d bb10-gcc/mpfr ] || git clone --single-branch --branch 700_release --depth 1 https://github.com/extrowerk/bb10-libmpfr.git bb10-gcc/mpfr
 
 # ----------------------------------------
 
